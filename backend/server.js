@@ -106,6 +106,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import authRoutes from "./routes/auth.js";
 import eventRoutes from "./routes/events.js";
+import registrationRoutes from "./routes/registrations.js";
 
 dotenv.config();
 
@@ -118,6 +119,8 @@ app.use(express.json());
 app.use("/uploads", express.static("uploads"));
 app.use("/api/auth", authRoutes);
 app.use("/api/events", eventRoutes);
+app.use("/api/registrations", registrationRoutes);
+
 
 // Test route
 app.get("/", (req, res) => {
